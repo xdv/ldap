@@ -7,6 +7,7 @@ package ldap
 import (
 	"errors"
 	"fmt"
+	"io"
 	"io/ioutil"
 
 	"gopkg.in/asn1-ber.v1"
@@ -36,7 +37,7 @@ const (
 	ApplicationExtendedResponse      = 24
 )
 
-var ApplicationMap = map[uint8]string{
+var ApplicationMap = map[ber.Tag]string{
 	ApplicationBindRequest:           "Bind Request",
 	ApplicationBindResponse:          "Bind Response",
 	ApplicationUnbindRequest:         "Unbind Request",
@@ -264,12 +265,12 @@ func addDefaultLDAPResponseDescriptions(packet *ber.Packet) {
 	}
 }
 
-func DebugBinaryFile(fileName string) error {
+func DebugBinaryFile(out io.Writer, fileName string) error {
 	file, err := ioutil.ReadFile(fileName)
 	if err != nil {
 		return NewError(ErrorDebugging, err)
 	}
-	ber.PrintBytes(file, "")
+	ber.PrintBytes(out, file, "")
 	packet := ber.DecodePacket(file)
 	addLDAPDescriptions(packet)
 	ber.PrintPacket(packet)

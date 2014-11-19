@@ -230,7 +230,7 @@ func compileFilter(filter string, pos int) (*ber.Packet, int, error) {
 				if part == "" {
 					continue
 				}
-				var tag byte
+				var tag ber.Tag
 				switch i {
 				case 0:
 					tag = FilterSubstringsInitial
