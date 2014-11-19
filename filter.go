@@ -234,7 +234,7 @@ func compileFilter(filter string, pos int) (*ber.Packet, int, error) {
 				switch i {
 				case 0:
 					tag = FilterSubstringsInitial
-				case len(parts)-1:
+				case len(parts) - 1:
 					tag = FilterSubstringsFinal
 				default:
 					tag = FilterSubstringsAny
