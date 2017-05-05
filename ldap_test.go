@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"gopkg.in/ldap.v2"
+	"github.com/ripple/ldap"
 )
 
 var ldapServer = "ldap.itd.umich.edu"

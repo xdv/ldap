@@ -4,8 +4,9 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/ripple/ldap"
+
 	"gopkg.in/asn1-ber.v1"
-	"gopkg.in/ldap.v2"
 )
 
 type compileTest struct {

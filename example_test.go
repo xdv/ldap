@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"gopkg.in/ldap.v2"
+	"github.com/ripple/ldap"
 )
 
 // ExampleConn_Bind demonstrates how to bind a connection to an ldap user

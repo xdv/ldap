@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"gopkg.in/ldap.v2"
+	"github.com/ripple/ldap"
 )
 
 func TestSuccessfulDNParsing(t *testing.T) {
